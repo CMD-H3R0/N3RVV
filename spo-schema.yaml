@@ -1,0 +1,47 @@
+# N3RVV Spark Portable Object (.spo) Schema v1.0
+spark_id:
+  type: string
+  description: Unique identifier (e.g., UUID).
+  required: true
+spark_title:
+  type: string
+  description: Concise title.
+  required: true
+description:
+  type: string
+  description: Detailed content.
+origin:
+  type: string
+  description: Idea source (e.g., "meeting").
+priority:
+  type: integer
+  description: 1-10, higher = urgent.
+  default: 5
+status:
+  type: enum
+  values: ["pending", "active", "completed", "archived"]
+  default: "pending"
+user_id:
+  type: string  
+  description: Creator ID (e.g., "Nomad").
+  required: true
+ttl:
+  type: string
+  description: Time-to-live (ISO date or "7d").
+thread:
+  type: array
+  items:
+    type: object
+    properties:
+      parent_id:
+        type: string or null
+      content:
+        type: string
+  description: Threaded sub-ideas.
+ai_override:
+  type: boolean
+  description: Allow AI to modify fields.
+  default: false
+signature:
+  type: string or null
+  description: Future crypto signature.
