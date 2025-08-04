@@ -26,13 +26,5 @@ Clone: git clone https://github.com/CMD-H3R0/N3RVV.git
 Check examples/sample.spo (coming soon).
 Feedback? Open an issue or DM Nomad@gRogue-Division.com or www.linkedin.com/in/justinlawarre!
 
-Whitepaper
-docs/whitepaper.md
-Roadmap
-
-Notion/Trello integrations.
-Blockchain for .spo signing.
-Public Trello board (Aug 2025).
-
 License: Custom (Free for personal use; see LICENSE.md).
 Built by (k)Nomad.
