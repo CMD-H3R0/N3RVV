@@ -1,0 +1,19 @@
+N3RVV Open Spark License (NOSL)
+
+Copyright (c) 2025 Justin LaWarre
+
+The N3RVV Open Spark License (NOSL) grants permission to use, copy, modify, merge, publish, distribute, and sublicense the .spo (Spark Portable Object) format and associated documentation (the "Work"), subject to the following conditions:
+
+1. **Attribution**: You must include the above copyright notice, this license, and a reference to N3RVV (n3rvv.com or GitHub repo) in all copies or substantial portions of the Work.
+
+2. **User Ownership**: Any Sparks (data created in .spo format) remain wholly owned by their creator. The Work does not grant rights to user-generated Sparks beyond processing as intended by N3RVV's open-source tools.
+
+3. **Non-Proprietary Forks**: Modifications to the .spo format must remain open-source under this license. Proprietary derivatives require explicit written permission from Justin LaWarre.
+
+4. **Neurodiversity Commitment**: Contributions to the Work, especially modules supporting neurodivergent users, are encouraged and should align with N3RVV's mission to enhance cognitive infrastructure.
+
+5. **No Warranty**: The Work is provided "as is," without warranty of any kind, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or noninfringement. In no event shall Justin LaWarre be liable for any claim, damages, or other liability arising from the Work.
+
+6. **Contribution Acknowledgment**: Contributors to the Work may be acknowledged in the N3RVV repository or related documentation, unless they opt out.
+
+By using the Work, you agree to these terms. For inquiries, contact nomad@rogue-division.com.
