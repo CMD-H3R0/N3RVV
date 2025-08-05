@@ -1,0 +1,61 @@
+# ?? N3RVV Spark Portable Object (.spo) v1.2
+# A sleek, trackable idea unit - like a chess move for your mind.
+spo_version: 1.2
+description: Captures and routes Sparks in N3RVV - concise, secure, and ready for action.
+
+fields:
+  # ?? Core ID
+  spark_id:           # Unique Spark ID (e.g., spark-001)
+    type: string
+    required: true
+  title:             # Short name (e.g., "Test Spark")
+    type: string
+    required: true
+  user_id:           # Creator (e.g., Nomad)
+    type: string
+    required: true
+    default: Nomad
+
+  # ?? Routing
+  origin:            # Where it came from (e.g., Voice, Manual)
+    type: string
+    required: true
+  pillar:            # N3RVV layer (M1ND, C0R3, SP1R1T)
+    type: string
+    required: true
+  destination:       # Where it's going (e.g., Spark Forge, Notion)
+    type: string
+    required: true
+  ttl:               # Lifespan in seconds (e.g., 120)
+    type: integer
+    required: true
+  confidence_score:  # Routing trust (0-100)
+    type: integer
+    required: true
+
+  # ?? Metadata
+  created_at:        # When it was born (e.g., 2025-08-04T23:23:00Z)
+    type: string
+    required: true
+  tags:              # Keywords (e.g., ["idea", "urgent"])
+    type: array
+    required: false
+  notes:             # Extra context
+    type: string
+    required: false
+
+  # ?? Security
+  digital_signature: # SHA-256 hash for authenticity
+    type: string
+    required: false
+  sovereignty_score: # Independence from external systems (0-100)
+    type: integer
+    required: false
+
+  # ?? Integrations
+  notion_mapping:    # Notion export (e.g., {page_id: "123"})
+    type: object
+    required: false
+  trello_mapping:    # Trello export (e.g., {board_id: "789"})
+    type: object
+    required: false
