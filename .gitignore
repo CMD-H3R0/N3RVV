@@ -1,24 +1,13 @@
-Set-Content -Path .gitignore -Value @"
-# OS-specific
-.DS_Store           # Mac junk (if you dual-boot)
-Thumbs.db           # Windows thumbnails
-Desktop.ini         # Windows folder settings
-
-# Temp files
-*.log               # Log files
-*.tmp               # Temporary files
-*.bak               # Backup files
-
-# Build artifacts (for future code)
-node_modules/       # Node.js dependencies
-dist/               # Build outputs
-build/              # Compiled folders
-
-# Editor/IDE files
-.vscode/            # VS Code settings
-.idea/              # JetBrains IDEs
-
-# Sensitive data (per your Shield Mode)
-*.spo.sec           # Encrypted .spo files
-secrets/            # Secret configs
-"@
+test.log
+*.log
+Thumbs.db
+Desktop.ini
+*.tmp
+*.bak
+node_modules/
+dist/
+build/
+.vscode/
+.idea/
+*.spo.sec
+secrets/
