@@ -1,47 +1,64 @@
-# N3RVV Spark Portable Object (.spo) Schema v1.0
+
+
+N3RVV Spark Portable Object (spo) Schema
+Defines the structure for .spo files, created by Justin LaWarre.
+Includes fields for spark_id, title, summary, created_by, and LLM feedback prompts.
+spark_id: spk-YYYY-MM-DD-XXX
+title: String  # Short descriptive name
+summary: String  # One-line intent
+created_by: String  # Author (e.g., Nomad)
+created_at: DateTime  # ISO 8601 (e.g., 2025-08-05T00:00:00Z)
+status: String  # e.g., new, cleaned, committed
+priority: String  # e.g., low, medium, high
+ttl: DateTime  # Time-to-live expiration
+body: String  # Raw or processed content
+llm_feedback:
+clarity_rating: Float  # 1-5 clarity score
+actionability_score: Float  # 1-5 actionability score
 spark_id:
-  type: string
-  description: Unique identifier (e.g., UUID).
-  required: true
+type: string
+description: Unique identifier (e.g., UUID).
+required: true
 spark_title:
-  type: string
-  description: Concise title.
-  required: true
+type: string
+description: Concise title.
+required: true
 description:
-  type: string
-  description: Detailed content.
+type: string
+description: Detailed content.
 origin:
-  type: string
-  description: Idea source (e.g., "meeting").
+type: string
+description: Idea source (e.g., "meeting").
 priority:
-  type: integer
-  description: 1-10, higher = urgent.
-  default: 5
+type: integer
+description: 1-10, higher = urgent.
+default: 5
 status:
-  type: enum
-  values: ["pending", "active", "completed", "archived"]
-  default: "pending"
+type: enum
+values: ["pending", "active", "completed", "archived"]
+default: "pending"
 user_id:
-  type: string  
-  description: Creator ID (e.g., "Nomad").
-  required: true
+type: string
+
+description: Creator ID (e.g., "Nomad").
+required: true
 ttl:
-  type: string
-  description: Time-to-live (ISO date or "7d").
+type: string
+description: Time-to-live (ISO date or "7d").
 thread:
-  type: array
-  items:
-    type: object
-    properties:
-      parent_id:
-        type: string or null
-      content:
-        type: string
-  description: Threaded sub-ideas.
+type: array
+items:
+type: object
+properties:
+parent_id:
+type: string or null
+content:
+type: string
+description: Threaded sub-ideas.
 ai_override:
-  type: boolean
-  description: Allow AI to modify fields.
-  default: false
+type: boolean
+description: Allow AI to modify fields.
+default: false
 signature:
-  type: string or null
-  description: Future crypto signature.
+type: string or null
+description: Future crypto signature.

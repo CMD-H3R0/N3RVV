@@ -1,0 +1,10 @@
+spark_id: spk-2025-08-05-001
+title: Cert Tracking Plan
+summary: Track PMP certification progress
+created_by: Nomad
+created_at: 2025-08-05T01:00:00Z
+status: new
+priority: high
+ttl: 2025-12-31T00:00:00Z
+body: |
+Outline steps for PMP renewal, schedule study sessions.

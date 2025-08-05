@@ -1,0 +1,10 @@
+spark_id: spk-2025-08-05-002
+title: Test TTL Decay
+summary: Test Spark expiration
+created_by: Nomad
+created_at: 2025-08-05T01:00:00Z
+status: new
+priority: medium
+ttl: 2025-08-10T00:00:00Z
+body: |
+Simulate TTL pruning for Sparks.
