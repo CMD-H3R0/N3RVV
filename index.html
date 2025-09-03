@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>N3RVV – Sovereign Cognitive OS</title>
+  <meta name="description" content="N3RVV: Sparks of thought captured, owned, and scaled. Sovereign by design.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#0b0f14; --fg:#e7eef8; --muted:#9fb3c8; --accent:#46d3ff; --card:#111826; }
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+    background:linear-gradient(180deg,#0b0f14 0%,#0c121b 100%); color:var(--fg); line-height:1.55}
+    .wrap{max-width:950px;margin:0 auto;padding:48px 20px}
+    .hero{padding:56px 28px;background:radial-gradient(1200px 500px at 30% -10%,rgba(70,211,255,.15),transparent),
+          linear-gradient(180deg,rgba(70,211,255,.05),transparent); border:1px solid #1b2636; border-radius:20px}
+    h1{font-weight:800; font-size:clamp(28px,5vw,44px); margin:0 0 10px}
+    h2{font-size:clamp(18px,3.2vw,24px); margin:32px 0 10px}
+    p{margin:8px 0; color:var(--muted)}
+    .grid{display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); margin-top:12px}
+    .card{background:var(--card); border:1px solid #1b2636; border-radius:16px; padding:18px}
+    .btn{display:inline-block; padding:12px 16px; border-radius:12px; color:#00121a; background:var(--accent);
+         text-decoration:none; font-weight:600}
+    .row{display:flex; gap:12px; flex-wrap:wrap}
+    .badges img{height:38px; filter:saturate(1.1)}
+    footer{opacity:.7; font-size:14px; margin-top:26px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <h1>N3RVV</h1>
+      <p><strong>Not a workspace. A sovereign cognitive OS.</strong></p>
+      <p>Sparks of thought captured in real time, routed into systems <em>you own</em>, built to scale across cloud and automation.</p>
+      <div class="row" style="margin-top:18px">
+        <a class="btn" href="https://github.com/YOUR_GITHUB_USERNAME/N3RVV" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://example.com/public/Spark_WP_YYYY-MM-DD.pdf" target="_blank" rel="noopener">Spark WP</a>
+        <a class="btn" href="https://example.com/public/Mycelium_WP_YYYY-MM-DD.pdf" target="_blank" rel="noopener">Mycelium WP</a>
+        <a class="btn" href="https://trello.com/b/YOUR_BOARD" target="_blank" rel="noopener">Public Roadmap</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Design Principles</h2>
+      <div class="grid">
+        <div class="card"><strong>Sovereign by design</strong><p>Free isn’t free if it lives in their cloud. Portable <code>.spo</code> Sparks; your data stays yours.</p></div>
+        <div class="card"><strong>Framework over model</strong><p>Models swap (GPT, Gemini, local). The system remains.</p></div>
+        <div class="card"><strong>Open format first</strong><p><code>.spo</code> spec + whitepapers shipped first; code follows.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Support</h2>
+      <p>If you believe ideas should be owned—not harvested—support the build.</p>
+      <div class="row">
+        <a class="btn" href="https://ko-fi.com/YOUR_HANDLE" target="_blank" rel="noopener">Donate</a>
+        <a class="btn" href="mailto:you@email.com">Contact</a>
+      </div>
+      <div class="badges" style="margin-top:16px">
+        <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/amazonaws.svg" alt="AWS">
+        <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/projectmanagementinstitute.svg" alt="PMP">
+      </div>
+    </section>
+
+    <footer>
+      © <span id="y"></span> N3RVV. No tracking. No data resale. Sovereign by design.
+    </footer>
+  </div>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
