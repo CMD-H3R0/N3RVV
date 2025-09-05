@@ -1,17 +1,44 @@
+⚡ N3RVV: Cognitive Infrastructure for High-Performance Minds
 
+N3RVV, crafted by Justin LaWarre, is a tactical framework to capture and evolve fleeting thoughts into structured, actionable memory units called Sparks. Designed for high performers and neurodivergent minds, N3RVV introduces the .spo (Spark Portable Object) format — an open, YAML-based schema that enables cognition capture, routing, and alignment with AI.
 
-N3RVV: Cognitive Infrastructure for High-Performance Minds
+🚀 Why N3RVV?
 
-N3RVV, crafted by Justin LaWarre, is a groundbreaking framework to harness fleeting thoughts, especially for neurodivergent minds. The .spo (Spark Portable Object) format, an open YAML-based system, captures, routes, and aligns ideas with AI to transform mental chaos into clarity.
+Turns scattered ideas into actionable Sparks
 
-Manifesto:
-N3RVV empowers individuals by turning scattered thoughts into actionable Sparks, prioritizing neurodivergent needs. The .spo format bridges human cognition and AI, fostering a scalable infrastructure for innovation. Join us to shape this human-AI synergy.
+Bridges human cognition with AI
 
-Usage
-specs/spo-schema.yaml: Outlines the .spo format with fields like spark_id, title, summary, and LLM feedback (e.g., clarity_rating).
-examples/: Features sample Sparks, such as spark_cert_plan.spo for PMP tracking.
-docs/n3rvv_whitepaper_v1.5.pdf: Details N3RVV’s vision and roadmap.
-License: Governed by the N3RVV Open Spark License.
+Provides sovereign, encrypted memory objects under user control
 
-Repository: https://github.com/CMD-H3R0/N3RVV
-Contact: jlawarre@rogue-division.com
+Designed for scalable, open innovation
+
+📄 Core Documents
+
+N3RVV Spark Architecture (v1.1.1)
+ – latest architecture whitepaper.
+
+.spo Schema (v5.3)
+ – full schema definition, including embedded/inline attachments.
+
+Spark Examples
+ – sample Sparks for certification tracking, cost ceilings, and TTL testing.
+
+🔑 Features in v5.3 of .spo
+
+Attachments: support for external files, embedded images/videos (via base64), and inline URIs.
+
+Routing & scoring: built-in confidence thresholds and system handoff logs.
+
+Lifecycle tracking: status, parent/child links, milestone history.
+
+Security & sovereignty: encryption policies, shielded/public modes, and blockchain anchoring.
+
+EchoLog: compact feedback/milestone logging with external pointers.
+
+📬 Contribute
+
+N3RVV is built in public. Issues, pull requests, and collaboration are welcome.
+
+📂 Repository: github.com/CMD-H3R0/N3RVV
+
+📧 Contact: jlawarre@rogue-division.com
