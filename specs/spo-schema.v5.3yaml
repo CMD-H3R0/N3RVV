@@ -1,0 +1,121 @@
+# N3RVV Spark Portable Object (.spo) Schema — v5.3
+# Governs capture, routing, scoring, lifecycle, and ops metadata
+
+ignition:
+  spark_id: string
+  name: string
+  description: string
+  aliases: [string]
+
+spark:
+  metadata:
+    origin: enum[voice_input, text_capture, reticle_edit, sil_generated, api, import]
+    created_at: datetime
+    source_device: string
+    type: enum[idea, task, note, insight, research, design, decision]
+    environment: string
+    sovereignty: enum[private, shielded, public]
+    tags: [string]
+    watermark:
+      generator: string
+      n3rvv_version: string
+      schema_version: string
+      build_id: string
+    integrity:
+      etag: string
+      checksum_algo: string
+    provenance:
+      author: string
+      contributors: [string]
+      imported_from: string|null
+      chain_anchor:
+        network: string
+        txid: string
+        hash: string
+
+  payload:
+    content: string
+    context: string
+    attachments:
+      - kind: enum[external, embedded, inline_uri]
+        name: string
+        mime: string
+        uri: string|nullable
+        base64: string|nullable
+        digest: string|nullable
+
+  scoring:
+    routing_score:
+      origin: string
+      suggested_dest: string
+      confidence: float
+      threshold: float
+      source: enum[sil, user, reticle, gateway]
+      history_log:
+        - attempt: int
+          dest: string
+          user_override: bool
+          at: datetime
+    priority: enum[low, medium, high, urgent]
+    ttl: datetime
+    signal_to_noise: float
+
+  lifecycle:
+    status: enum[idea, active, in-progress, merge_candidate, merged, evolved, completed, archived, discarded]
+    parent: string
+    children: [string]
+    history:
+      - at: datetime
+        actor: string
+        event: string
+        note: string
+    milestones:
+      - type: string
+        from: string|nullable
+        to: string|nullable
+        sim_peer: string|nullable
+        sim: float|nullable
+        at: datetime
+    outcome: string|null
+
+  echolog:
+    last_updated: datetime
+    last_advice:
+      type: string
+      sim_peer: string
+      sim_score: float
+      confidence: float
+      rationale: string
+    milestones: [object]
+    pointers:
+      s3_uri: string
+      hot_index_id: string
+
+  security:
+    classification: enum[public, internal, confidential, restricted]
+    encryption:
+      in_transit: bool
+      at_rest: bool
+      kms_key: string
+    processing_policy:
+      allow_external_ai: bool
+      pii_present: bool
+      retention_policy: enum[retain, rotate, redact]
+      bastion_mode_required: bool
+
+  opsn3rvv:
+    cost_center: string
+    telemetry_level: enum[minimal, standard, verbose]
+    health_flags: [string]
+    sil_advice:
+      merge_candidates: [string]
+      route_suggestion:
+        dest: string
+        confidence: float
+    runbooks: [string]
+    controls: object
+
+ember:
+  version: string
+  license: string
+  generator: string
