@@ -1,84 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>N3RVV</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: url("bg.png") no-repeat center center fixed;
-      background-size: cover;
-      color: #f0f6fc;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh;
-      text-align: center;
+    :root{
+      --bg: #0d1117;
+      --fg: #f0f6fc;
+      --muted:#8b949e;
+      --brand:#238636;
+      --brand-2:#8957e5;
+      --card-bg: rgba(13,17,23,.6);
+      --card-bd: rgba(255,255,255,.08);
+      --shadow: 0 10px 30px rgba(0,0,0,.55);
+      --radius: 14px;
+      --maxw: 1100px;
     }
-    h1 {
-      font-size: 2.5rem;
-      margin: 2rem 0 0.5rem;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+
+    /* Page background */
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Arial, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, sans-serif;
+      color:var(--fg);
+      background: var(--bg) url("bg.png") no-repeat center/cover fixed;
     }
-    p {
-      font-size: 1.2rem;
-      margin: 0.5rem 0 1.5rem;
-      max-width: 600px;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    /* Dark overlay to calm the image */
+    body::before{
+      content:"";
+      position:fixed; inset:0;
+      background:
+        radial-gradient(1000px 400px at 50% -200px, rgba(0,0,0,.2), transparent 60%),
+        linear-gradient(to bottom, rgba(0,0,0,.65), rgba(0,0,0,.35) 30%, rgba(0,0,0,.65));
+      pointer-events:none;
+      z-index:-1;
     }
-    a.button {
-      margin-top: 0.75rem;
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      background-color: #238636;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
+
+    /* Layout wrappers */
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:0 20px;}
+    .hero{
+      padding: clamp(56px, 8vw, 120px) 0 32px;
+      text-align:center;
     }
-    a.button:hover {
-      background-color: #2ea043;
+    h1{
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      margin:0 0 .4rem;
+      text-shadow: 0 6px 24px rgba(0,0,0,.6);
     }
-    .trello-container {
-      margin: 2rem 0;
-      width: 90%;
-      max-width: 900px;
-      height: 600px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
-      border-radius: 8px;
-      overflow: hidden;
+    p.lead{
+      margin:.25rem auto 1.25rem;
+      max-width: 700px;
+      font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+      color:#d0d7de;
+      text-shadow: 0 4px 16px rgba(0,0,0,.6);
     }
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
+
+    /* Buttons */
+    .actions{
+      display:flex; gap:12px; justify-content:center; flex-wrap:wrap;
     }
-    footer {
-      margin-top: auto;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #8b949e;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+    .button{
+      display:inline-block;
+      padding:.85rem 1.4rem;
+      border-radius:10px;
+      font-weight:700;
+      text-decoration:none;
+      color:white;
+      background:var(--brand);
+      box-shadow: var(--shadow);
+      transition: transform .05s ease, filter .2s ease;
+    }
+    .button:hover{ transform: translateY(-1px); filter: brightness(1.08); }
+    .button.alt{ background:var(--brand-2); }
+
+    /* Trello section */
+    .section{
+      padding: 12px 0 64px;
+    }
+    .card{
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      background: var(--card-bg);
+      border: 1px solid var(--card-bd);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-header{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:12px 16px; border-bottom:1px solid var(--card-bd);
+      color:var(--muted); font-size:.95rem;
+    }
+    .card-body{ height: 72vh; max-height: 780px; min-height: 460px; }
+    .card-body iframe{ width:100%; height:100%; border:0; display:block; }
+
+    footer{
+      color:var(--muted);
+      text-align:center;
+      padding:28px 0 40px;
+      font-size:.95rem;
+    }
+
+    /* Mobile niceties */
+    @media (max-width: 540px){
+      .actions{flex-direction:column}
+      .button{width:100%}
+      .card-body{height: 65vh; min-height: 420px;}
     }
   </style>
 </head>
 <body>
-  <h1>🚀 N3RVV</h1>
-  <p>A cognitive OS & automation lab — sovereign by design.  
-     Build in public. Ideas belong to you.</p>
+  <header class="hero wrap">
+    <h1>🚀 N3RVV</h1>
+    <p class="lead">A cognitive OS & automation lab — sovereign by design. Build in public. Ideas belong to you.</p>
+    <div class="actions">
+      <a class="button" href="https://github.com/CMD-H3R0/N3RVV" target="_blank" rel="noopener">Explore on GitHub</a>
+      <a class="button alt" href="https://www.buymeacoffee.com/" target="_blank" rel="noopener">☕ Support the Project</a>
+    </div>
+  </header>
 
-  <a class="button" href="https://github.com/CMD-H3R0/N3RVV" target="_blank">Explore on GitHub</a>
-  
-  <a class="button" style="background-color:#8957e5;" href="https://www.buymeacoffee.com/" target="_blank">☕ Support the Project</a>
-
-  <!-- Trello Embed -->
-  <div class="trello-container">
-    <iframe src="https://trello.com/b/JCKRcxRA.html"></iframe>
-  </div>
+  <main class="section wrap">
+    <div class="card">
+      <div class="card-header">
+        <span><strong>N3RVV • Public Roadmap</strong></span>
+        <span>Powered by Trello</span>
+      </div>
+      <div class="card-body">
+        <!-- Use the public board embed form for a clean iframe -->
+        <iframe src="https://trello.com/b/68b033eb9e154c35bffa12a6.html" title="N3RVV Public Roadmap on Trello"></iframe>
+      </div>
+    </div>
+  </main>
 
   <footer>© 2025 N3RVV — Tactical by Nature</footer>
 </body>
